@@ -7,14 +7,24 @@ function App() {
   //Destructuring
   //useState là hàm có giá trị trả về là 1 array
   //gán name/setName là phần tử đầu tiên/t2 của mảng.
-  let [name, setName] = useState('...')
-  const [address, setAddress] = useState('')
+  const [newTodo, setNewTodo] = useState('')
+  const [todos, setTodos] = useState([
+    { id: 1, title: 'Code' },
+    { id: 2, title: 'Eat' },
+    { id: 3, title: 'Sleep' }
+  ])
 
   const handleClickButton = () => {
-    setName(address)
+    if (!newTodo) {
+      alert('Empty input!')
+      return
+    }
+    let newTd = { id: Math.floor(Math.random() * 101), title: newTodo }
+    setTodos([...todos, newTd])
+    setNewTodo('')
   }
   const handleChangeInput = (event) => {
-    setAddress(event.target.value)
+    setNewTodo(event.target.value)
   }
 
   return (
@@ -25,10 +35,14 @@ function App() {
         <p>
           This is my ReactJS project
         </p>
-        <p>
-          My name is Phong and your name is {name}
-        </p>
-        <input type='text' value={address} onChange={(event) => handleChangeInput(event)}></input>
+        <ul className='todos-container'>
+          {todos.map(todo => {
+            return (
+              <li className='todos-child' key={todo.id}>{todo.title}</li>
+            )
+          })}
+        </ul>
+        <input type='text' value={newTodo} onChange={(event) => handleChangeInput(event)}></input>
         <button type='button' onClick={() => handleClickButton()}>OK</button>
       </header>
     </div>
