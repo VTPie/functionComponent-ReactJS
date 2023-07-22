@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navigation from './views/Navigation/Navigation';
+import TODOList from './views/TODO/TODOList';
 import { useState } from 'react';
 
 function App() {
@@ -35,13 +36,7 @@ function App() {
         <p>
           This is my ReactJS project
         </p>
-        <ul className='todos-container'>
-          {todos.map(todo => {
-            return (
-              <li className='todos-child' key={todo.id}>{todo.title}</li>
-            )
-          })}
-        </ul>
+        <TODOList todos={todos} />
         <input type='text' value={newTodo} onChange={(event) => handleChangeInput(event)}></input>
         <button type='button' onClick={() => handleClickButton()}>OK</button>
       </header>
