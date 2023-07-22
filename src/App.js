@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navigation from './views/Navigation/Navigation';
 import TODOList from './views/TODO/TODOList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   //Destructuring
@@ -14,6 +14,19 @@ function App() {
     { id: 2, title: 'Eat' },
     { id: 3, title: 'Sleep' }
   ])
+
+  //didMount + didUpdate + willUnmount
+  useEffect(() => {
+    console.log('>>> run useEffect')
+  })
+  //didMount: Chạy 1l duy nhất khi component render lần đầu
+  useEffect(() => {
+    console.log('>>> run useEffect as componentDidMount')
+  }, [])
+  //didUpdate: Chạy mỗi khi newTodo thay đổi.
+  useEffect(() => {
+    console.log('>>> run useEffect as componentDidUpdate')
+  }, [newTodo])
 
   const handleClickButton = () => {
     if (!newTodo) {
