@@ -7,7 +7,7 @@ import { useState } from 'react';
 function App() {
   //Destructuring
   //useState là hàm có giá trị trả về là 1 array
-  //gán name/setName là phần tử đầu tiên/t2 của mảng.
+  //gán todos/setTodos là phần tử đầu tiên/t2 của mảng.
   const [newTodo, setNewTodo] = useState('')
   const [todos, setTodos] = useState([
     { id: 1, title: 'Code' },
@@ -27,6 +27,10 @@ function App() {
   const handleChangeInput = (event) => {
     setNewTodo(event.target.value)
   }
+  const deleteTodo = (todo) => {
+    let newtodos = todos.filter(item => item.id !== todo.id)
+    setTodos(newtodos)
+  }
 
   return (
     <div className="App">
@@ -36,7 +40,7 @@ function App() {
         <p>
           This is my ReactJS project
         </p>
-        <TODOList todos={todos} />
+        <TODOList todos={todos} deleteTodo={deleteTodo} />
         <input type='text' value={newTodo} onChange={(event) => handleChangeInput(event)}></input>
         <button type='button' onClick={() => handleClickButton()}>OK</button>
       </header>
