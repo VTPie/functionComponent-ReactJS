@@ -1,26 +1,10 @@
 import './Population.scss'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import useFetch from '../../customize/fetch'
+
 
 const Population = () => {
-    const [dataCity, setDataCity] = useState([])
-    //Ban đầu - chưa có data nên 'loading = true'
-    const [loading, setLoading] = useState(true)
-    const [errMessage, setErrMessage] = useState(false)
-
-    //didMount
-    useEffect(async () => {
-        try {
-            let res = await axios.get('https://countriesnow.space/api/v0.1/countries/population/cities')
-            let data = (res && res.data.data) ? res.data.data : []
-            setDataCity(data)
-            setLoading(false)
-            setErrMessage(false)
-        } catch (e) {
-            setLoading(false)
-            setErrMessage(true)
-        }
-    }, [])
+    const { data: dataCity, loading, errMessage } = useFetch('https://countriesnow.space/api/v0.1/countries/population/cities')
 
     return (
         <table>
