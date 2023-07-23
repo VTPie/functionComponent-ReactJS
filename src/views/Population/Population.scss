@@ -1,11 +1,15 @@
-table {
+div{
+  .title{
+    font-size: 30px;
+    color: yellow;
+  }
+
+  table{
     font-family: arial, sans-serif;
     border-collapse: collapse;
     font-size: 14px;
     text-align: center;
-    width: 70%;
     table-layout:fixed;
-
     thead{
       tr{
         th{
@@ -29,3 +33,4 @@ table {
       }
     }
   }
+}
