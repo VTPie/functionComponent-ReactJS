@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navigation from './views/Navigation/Navigation';
 import TODOList from './views/TODO/TODOList';
+import Population from './views/Population/Population';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -16,17 +17,19 @@ function App() {
   ])
 
   //didMount + didUpdate + willUnmount
-  useEffect(() => {
-    console.log('>>> run useEffect')
-  })
+  // useEffect(() => {
+  //   console.log('>>> run useEffect')
+  // })
+
   //didMount: Chạy 1l duy nhất khi component render lần đầu
-  useEffect(() => {
-    console.log('>>> run useEffect as componentDidMount')
-  }, [])
+  // useEffect(() => {
+  //   console.log('>>> run useEffect as componentDidMount')
+  // }, [])
+
   //didUpdate: Chạy mỗi khi newTodo thay đổi.
-  useEffect(() => {
-    console.log('>>> run useEffect as componentDidUpdate')
-  }, [newTodo])
+  // useEffect(() => {
+  //   console.log('>>> run useEffect as componentDidUpdate')
+  // }, [newTodo])
 
   const handleClickButton = () => {
     if (!newTodo) {
@@ -53,9 +56,10 @@ function App() {
         <p>
           This is my ReactJS project
         </p>
-        <TODOList todos={todos} deleteTodo={deleteTodo} />
+        {/* <TODOList todos={todos} deleteTodo={deleteTodo} />
         <input type='text' value={newTodo} onChange={(event) => handleChangeInput(event)}></input>
-        <button type='button' onClick={() => handleClickButton()}>OK</button>
+        <button type='button' onClick={() => handleClickButton()}>OK</button> */}
+        <Population />
       </header>
     </div>
   );
