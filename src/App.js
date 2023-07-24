@@ -8,8 +8,14 @@ import {
   Route,
 } from "react-router-dom";
 import Home from './views/Home/Home';
+import { CountDownClass, CountDownFunc } from './views/CountDown/CountDown';
 
 function App() {
+
+  const onTimesup = () => {
+    alert('Times up')
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -24,6 +30,11 @@ function App() {
             </Route>
             <Route path="/todo">
               <TODOList />
+            </Route>
+            <Route path="/count">
+              <CountDownClass onTimesup={onTimesup} />
+              <span>-------------------</span>
+              <CountDownFunc />
             </Route>
           </Switch>
         </header>
