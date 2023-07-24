@@ -1,0 +1,42 @@
+.blogs-container {
+    display       : flex;
+    flex-direction: row;
+    flex-wrap     : wrap;
+    gap           : 10px;
+    font-size     : 14px;
+    margin-top: 20px;
+    justify-content: center;
+
+    .single-blog {
+        border       : 1px solid grey;
+        border-radius: 3px;
+        padding      : 10px;
+        margin       : 10px;
+        max-width    : 400px;
+
+        text-align: left !important;
+
+        .blog-title {
+            font-size  : 16px;
+            font-weight: 600;
+            color: yellow;
+        }
+
+        .blog-content {
+            font-size  : 12px;
+            padding: 10px 0;
+        }
+    }
+}
+
+.detailBlog-container{
+    .detailBlog-title{
+        color: yellow;
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .detailBlog-content{
+        margin-top: 10px;
+        font-size: 16px;
+    }
+}

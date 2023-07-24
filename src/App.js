@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import Home from './views/Home/Home';
 import { CountDownClass, CountDownFunc } from './views/CountDown/CountDown';
+import Blog from './views/Blog/Blog';
+import DetailBlog from './views/Blog/DetailBlog';
 
 function App() {
 
@@ -35,6 +37,12 @@ function App() {
               <CountDownClass onTimesup={onTimesup} />
               <span>-------------------</span>
               <CountDownFunc />
+            </Route>
+            <Route path="/blogs" exact>
+              <Blog />
+            </Route>
+            <Route path="/blogs/:id">
+              <DetailBlog />
             </Route>
           </Switch>
         </header>

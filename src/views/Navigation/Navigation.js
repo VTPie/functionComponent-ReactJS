@@ -10,6 +10,7 @@ const Navigation = () => {
             <NavLink to="/population" activeClassName="active">Population</NavLink>
             <NavLink to="/todo" activeClassName="active">TODO App</NavLink>
             <NavLink to="/count" activeClassName="active">Count Down</NavLink>
+            <NavLink to="/blogs" activeClassName="active">Blogs</NavLink>
         </div>
     )
 }
