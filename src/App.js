@@ -11,6 +11,7 @@ import Home from './views/Home/Home';
 import { CountDownClass, CountDownFunc } from './views/CountDown/CountDown';
 import Blog from './views/Blog/Blog';
 import DetailBlog from './views/Blog/DetailBlog';
+import AddNewBlog from './views/Blog/AddNewBlog';
 
 function App() {
 
@@ -43,6 +44,9 @@ function App() {
             </Route>
             <Route path="/blogs/:id">
               <DetailBlog />
+            </Route>
+            <Route path="/add-new-blog">
+              <AddNewBlog />
             </Route>
           </Switch>
         </header>

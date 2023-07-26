@@ -12,7 +12,7 @@
         border-radius: 3px;
         padding      : 10px;
         margin       : 10px;
-        max-width    : 400px;
+        width    : 400px;
 
         text-align: left !important;
 
@@ -20,6 +20,8 @@
             font-size  : 16px;
             font-weight: 600;
             color: yellow;
+            display: flex;
+            justify-content: space-between;
         }
 
         .blog-content {
@@ -38,5 +40,35 @@
     .detailBlog-content{
         margin-top: 10px;
         font-size: 16px;
+    }
+}
+
+.newblog-container{
+    font-size: 16px;
+    padding: 20px;
+
+    .newblog-addtitle{
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        input{
+            width: 400px;
+        }
+    }
+    .newblog-addcontent{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: 10px;
+
+        input{
+            width: 400px;
+        }
+    }
+    .newblog-submitbtn{
+        margin-left: auto;
+        margin-right: auto;
     }
 }
